@@ -3,186 +3,238 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slack ログイン方法変更ガイド - 2026.03.19</title>
+    <title>【Musubell事業部】17Fオフィス移転ガイド v2.2</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Inter', 'Noto Sans JP', sans-serif;
-            background-color: #f8fafc;
-            /* ベースフォントサイズを大きく設定 */
-            font-size: 1.15rem;
-            color: #1e293b;
-        }
-        .gradient-bg {
-            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
-        }
-        .step-card {
-            transition: all 0.3s ease;
-        }
-        .step-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-        }
+        body { font-family: 'Noto Sans JP', sans-serif; background-color: #f8fafc; font-size: 18px; }
+        .flow-card { transition: all 0.3s ease; }
+        .flow-card:hover { transform: translateY(-5px); shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); }
+        .custom-scrollbar::-webkit-scrollbar { width: 8px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #f1f1f1; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 10px; }
+        .date-highlight { font-variant-numeric: tabular-nums; }
     </style>
 </head>
-<body class="p-6 md:p-12 lg:p-16">
-    <div class="max-w-6xl mx-auto">
-        <!-- Header -->
-        <header class="gradient-bg text-white p-12 md:p-16 rounded-[3rem] shadow-2xl mb-12 text-center relative overflow-hidden">
-            <div class="relative z-10">
-                <div class="flex justify-center mb-8">
-                    <svg width="100" height="100" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg" class="drop-shadow-lg">
-                        <path d="M42.2 42.2C42.2 35.3 36.6 29.7 29.7 29.7C22.8 29.7 17.2 35.3 17.2 42.2V67.2C17.2 74.1 22.8 79.7 29.7 79.7C36.6 79.7 42.2 74.1 42.2 67.2V42.2Z" fill="#E01E5A"/>
-                        <path d="M54.7 29.7C47.8 29.7 42.2 35.3 42.2 42.2C42.2 49.1 47.8 54.7 54.7 54.7H79.7C86.6 54.7 92.2 49.1 92.2 42.2C92.2 35.3 86.6 29.7 79.7 29.7H54.7Z" fill="#36C5F0"/>
-                        <path d="M85.8 85.8C85.8 92.7 91.4 98.3 98.3 98.3C105.2 98.3 110.8 92.7 110.8 85.8V60.8C110.8 53.9 105.2 48.3 98.3 48.3C91.4 48.3 85.8 53.9 85.8 60.8V85.8Z" fill="#2EB67D"/>
-                        <path d="M73.3 98.3C80.2 98.3 85.8 92.7 85.8 85.8C85.8 78.9 80.2 73.3 73.3 73.3H48.3C41.4 73.3 35.8 78.9 35.8 85.8C35.8 92.7 41.4 98.3 48.3 98.3H73.3Z" fill="#ECB22E"/>
-                    </svg>
-                </div>
-                <h1 class="text-4xl md:text-6xl font-black mb-6 tracking-tight">Slack ログイン運用変更</h1>
-                <p class="text-blue-100 text-2xl md:text-3xl font-bold mb-8">実施日：2026年3月19日（木） 19:00〜</p>
-                <div class="inline-block bg-white/20 backdrop-blur-xl px-10 py-4 rounded-full text-xl md:text-2xl font-black border border-white/30">
-                    🔒 Google認証 & 二要素認証(2FA) 導入
-                </div>
-            </div>
-        </header>
+<body class="antialiased text-slate-900 leading-relaxed text-lg text-left">
 
-        <!-- Timeline -->
-        <div class="bg-white rounded-[3rem] p-10 shadow-sm border border-slate-100 mb-12">
-            <h2 class="text-3xl font-black mb-10 flex items-center gap-4 text-slate-800">
-                <span class="bg-blue-600 text-white p-2.5 rounded-2xl shadow-lg shadow-blue-200">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                </span>
-                当日のスケジュール
-            </h2>
-            <div class="flex flex-col md:flex-row gap-8">
-                <div class="flex-1 bg-slate-50 p-8 rounded-[2.5rem] border-l-[12px] border-blue-500 shadow-sm">
-                    <p class="text-lg font-black text-blue-600 mb-2">3月19日(木) 19:00〜</p>
-                    <p class="text-2xl font-black mb-3">全ユーザー強制ログアウト</p>
-                    <p class="text-lg text-slate-600 leading-relaxed font-medium">セキュリティ設定のため、全端末（PC・スマホ）のログインが一度解除されます。</p>
-                </div>
-                <div class="flex items-center justify-center hidden md:flex text-slate-200">
-                    <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                </div>
-                <div class="flex-1 bg-slate-50 p-8 rounded-[2.5rem] border-l-[12px] border-emerald-500 shadow-sm">
-                    <p class="text-lg font-black text-emerald-600 mb-2">3月23日(月) 業務開始〜</p>
-                    <p class="text-2xl font-black mb-3">新方式での再ログイン</p>
-                    <p class="text-lg text-slate-600 leading-relaxed font-medium">週明けの業務開始時に、以下のガイドに従って再ログインをお願いします。</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Role Split -->
-        <h2 class="text-4xl font-black mb-12 text-center text-slate-800 tracking-tight">どちらのログイン方法ですか？</h2>
+    <div class="max-w-4xl mx-auto px-4 py-12">
         
-        <div class="grid lg:grid-cols-2 gap-12 mb-16">
-            <!-- Path A: Employee -->
-            <div class="step-card bg-white rounded-[3.5rem] p-12 shadow-2xl border-[6px] border-blue-500 flex flex-col items-center">
-                <div class="bg-blue-600 text-white px-8 py-2 rounded-full text-base font-black mb-8 uppercase tracking-[0.2em] shadow-lg shadow-blue-200">Type A</div>
-                <h3 class="text-3xl font-black mb-6">Google認証対象の方</h3>
-                <p class="text-xl text-slate-500 mb-10 text-center leading-relaxed font-bold">@garage.co.jp ドメイン利用者<br>および Google認証済みのグループ各社</p>
-                
-                <div class="w-full space-y-8 mb-12">
-                    <div class="bg-blue-50 p-8 rounded-[2rem] flex items-center gap-6 border border-blue-100">
-                        <div class="bg-white p-4 rounded-2xl shadow-md text-blue-600">
-                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
-                        </div>
-                        <div>
-                            <p class="text-sm font-black text-blue-700 uppercase mb-1">Step 01</p>
-                            <p class="text-2xl font-black text-slate-800">「Googleでサインイン」</p>
-                        </div>
-                    </div>
-                    <div class="bg-blue-50 p-8 rounded-[2rem] flex items-center gap-6 border border-blue-100">
-                        <div class="bg-white p-4 rounded-2xl shadow-md text-blue-600 font-black text-3xl w-20 h-20 flex items-center justify-center italic">G</div>
-                        <div>
-                            <p class="text-sm font-black text-blue-700 uppercase mb-1">Step 02</p>
-                            <p class="text-2xl font-black text-slate-800">業務用Googleで認証</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="mt-auto p-8 bg-blue-50/50 rounded-[2rem] w-full border-2 border-dashed border-blue-200 text-center">
-                    <p class="text-lg leading-relaxed text-blue-800 font-black">※今後はパスワード入力を使わず、<br>必ずGoogle認証ボタンを利用してください。</p>
-                </div>
-            </div>
+        <!-- Header -->
+        <div class="bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white rounded-[3rem] p-10 md:p-16 mb-12 shadow-2xl relative overflow-hidden text-center md:text-left border-b-[12px] border-blue-600">
+            <div class="relative z-10">
+                <h1 class="text-3xl md:text-5xl font-black leading-tight mb-12 tracking-tighter text-white">
+                    2026年7月より、Musubell事業部の<br class="hidden md:block">
+                    メインオフィスは <span class="text-blue-400 underline decoration-4 underline-offset-[12px]">17Fへ移転</span> いたします
+                </h1>
 
-            <!-- Path B: Guest -->
-            <div class="step-card bg-white rounded-[3.5rem] p-12 shadow-2xl border-[6px] border-slate-900 flex flex-col items-center">
-                <div class="bg-slate-900 text-white px-8 py-2 rounded-full text-base font-black mb-8 uppercase tracking-[0.2em] shadow-lg shadow-slate-300">Type B</div>
-                <h3 class="text-3xl font-black mb-6 text-slate-900">パスワード認証の方</h3>
-                <p class="text-xl text-slate-500 mb-10 text-center leading-relaxed font-bold">外部パートナー企業様ドメイン<br>（Google認証非対象のドメイン）</p>
-                
-                <div class="w-full space-y-8 mb-12">
-                    <div class="bg-slate-50 p-8 rounded-[2rem] flex items-center gap-6 border border-slate-200">
-                        <div class="bg-white p-4 rounded-2xl shadow-md text-slate-700">
-                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-                        </div>
-                        <div>
-                            <p class="text-sm font-black text-slate-500 uppercase mb-1">Step 01</p>
-                            <p class="text-2xl font-black text-slate-800">従来通りパスワード入力</p>
-                        </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
+                    <div class="bg-white/10 backdrop-blur-md rounded-3xl p-6 border border-white/20 text-center">
+                        <p class="text-sm text-slate-300 mb-2 font-bold uppercase tracking-widest text-nowrap">移転先</p>
+                        <p class="text-4xl font-black text-blue-400">17F</p>
                     </div>
-                    <div class="bg-amber-50 p-8 rounded-[2rem] border-2 border-amber-300 flex items-center gap-6 shadow-sm">
-                        <div class="bg-amber-500 text-white p-4 rounded-2xl shadow-lg">
-                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A10.003 10.003 0 004.954 9.42m12.156 5.08l.064.12A9.969 9.969 0 0113.233 21m3.958-3.06a10.001 10.001 0 00-8.212-17.93c-4.813 0-8.844 3.723-9.479 8.502"></path></svg>
-                        </div>
-                        <div>
-                            <p class="text-sm font-black text-amber-700 italic uppercase mb-1">New Policy</p>
-                            <p class="text-2xl font-black text-slate-800 italic underline decoration-amber-400 decoration-4">二要素認証(2FA)の設定</p>
-                        </div>
+                    <div class="bg-white/10 backdrop-blur-md rounded-3xl p-6 border border-white/20 text-center font-black">
+                        <p class="text-sm text-slate-300 mb-2 font-bold uppercase tracking-widest text-nowrap">部署記号</p>
+                        <p class="text-4xl text-white text-nowrap">17-E</p>
                     </div>
-                </div>
-
-                <div class="mt-auto p-8 bg-amber-100/50 rounded-[2rem] w-full border-2 border-amber-200">
-                    <p class="text-lg leading-relaxed text-amber-900 font-bold">※セキュリティ強化のため、設定が必須化されます。画面の指示に従い完了させてください。</p>
+                    <div class="bg-blue-600 rounded-3xl p-6 shadow-lg text-center ring-4 ring-blue-500/30 font-black">
+                        <p class="text-sm text-blue-100 mb-2 font-bold uppercase tracking-widest text-nowrap">ラベル色</p>
+                        <p class="text-3xl text-white italic tracking-tighter text-nowrap">ブルー 🟦</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-md rounded-3xl p-6 border border-white/20 text-center font-black">
+                        <p class="text-sm text-slate-300 mb-2 font-bold uppercase tracking-widest text-nowrap">削減目標</p>
+                        <p class="text-3xl text-blue-300 font-black">▼ 40%</p>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- FAQ/Info Section -->
-        <section class="bg-slate-900 text-white p-12 md:p-16 rounded-[3.5rem] mb-16 shadow-2xl">
-            <h3 class="text-3xl font-black mb-12 flex items-center gap-4">
-                <svg class="w-10 h-10 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                外部パートナー様へ：二要素認証(2FA)とは？
-            </h3>
-            <div class="grid md:grid-cols-3 gap-12">
-                <div class="relative p-8 bg-white/5 rounded-3xl border border-white/10">
-                    <div class="absolute -top-6 left-8 bg-amber-500 text-slate-900 w-12 h-12 flex items-center justify-center rounded-2xl font-black text-2xl shadow-lg">1</div>
-                    <p class="text-2xl font-black mb-4 mt-2">いつもの認証</p>
-                    <p class="text-lg text-slate-400 leading-relaxed">まずは従来通りパスワードでログインを行います。</p>
+        <!-- Section 1: Decision Flow -->
+        <section class="mb-20">
+            <div class="flex items-center justify-between mb-12 border-b-4 border-slate-200 pb-6">
+                <h2 class="text-3xl font-black flex items-center tracking-tight text-slate-900">
+                    <span class="bg-slate-900 text-white w-14 h-14 rounded-2xl flex items-center justify-center mr-6 text-2xl shadow-lg font-serif italic">01</span>
+                    荷物ごとの対応ガイド
+                </h2>
+            </div>
+
+            <p class="text-xl font-black text-center mb-10 text-slate-600 italic">「この荷物、どうすればいい？」と思ったら</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+                
+                <!-- Option 1: Discard -->
+                <div class="bg-white p-10 rounded-[3rem] shadow-md border-2 border-slate-100 flow-card flex flex-col items-center">
+                    <div class="bg-slate-100 p-6 rounded-full mb-8">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg>
+                    </div>
+                    <h3 class="text-2xl font-black mb-4">不要なもの</h3>
+                    <p class="text-sm text-slate-400 font-bold mb-8 italic text-center leading-relaxed">私物・使わない資料・過去の販促物</p>
+                    <div class="mt-auto w-full">
+                        <p class="bg-slate-900 text-white text-center py-4 rounded-2xl font-black text-lg">廃棄・持ち帰り</p>
+                        <p class="text-sm text-slate-500 mt-4 text-center leading-relaxed">フロアのルールに従い廃棄、<br>または自宅へ持ち帰り</p>
+                    </div>
                 </div>
-                <div class="relative p-8 bg-white/5 rounded-3xl border border-white/10">
-                    <div class="absolute -top-6 left-8 bg-amber-500 text-slate-900 w-12 h-12 flex items-center justify-center rounded-2xl font-black text-2xl shadow-lg">2</div>
-                    <p class="text-2xl font-black mb-4 mt-2">確認コードの入力</p>
-                    <p class="text-lg text-slate-400 leading-relaxed">スマホアプリやメールに届く認証コードを確認して入力します。</p>
+
+                <!-- Option 2: Packing -->
+                <div class="bg-white p-10 rounded-[3rem] shadow-md border-2 border-slate-100 flow-card flex flex-col items-center">
+                    <div class="bg-blue-50 p-6 rounded-full mb-8">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /></svg>
+                    </div>
+                    <h3 class="text-2xl font-black mb-4">7月まで不要</h3>
+                    <p class="text-sm text-slate-400 font-bold mb-8 italic text-center leading-relaxed">業務に必要だが、5・6月は使わないもの</p>
+                    <div class="mt-auto w-full">
+                        <p class="bg-blue-600 text-white text-center py-4 rounded-2xl font-black text-lg text-nowrap">パッキング (箱詰め)</p>
+                        <p class="text-sm text-blue-600 mt-4 text-center font-bold leading-relaxed ring-2 ring-blue-50 p-2 rounded-xl italic bg-blue-50/50">
+                            ⚠️ 7月まで封印！<br>
+                            18階に保管されます
+                        </p>
+                    </div>
                 </div>
-                <div class="relative p-8 bg-white/5 rounded-3xl border border-white/10">
-                    <div class="absolute -top-6 left-8 bg-amber-500 text-slate-900 w-12 h-12 flex items-center justify-center rounded-2xl font-black text-2xl shadow-lg">3</div>
-                    <p class="text-2xl font-black mb-4 mt-2">設定完了</p>
-                    <p class="text-lg text-slate-400 leading-relaxed">二重の鍵で守られるようになり、アカウントの乗っ取りを防げます。</p>
+
+                <!-- Option 3: Application -->
+                <div class="bg-red-50 p-10 rounded-[3rem] shadow-xl border-4 border-red-200 flow-card flex flex-col items-center relative">
+                    <div class="absolute -top-4 bg-red-600 text-white px-6 py-1 rounded-full text-xs font-black shadow-lg">至急アクション</div>
+                    <div class="bg-red-100 p-6 rounded-full mb-8 ring-4 ring-white text-red-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" /></svg>
+                    </div>
+                    <h3 class="text-2xl font-black mb-4 text-red-700 tracking-tighter text-center leading-tight">個人ロッカー<br>が必要な方</h3>
+                    <p class="text-sm text-red-500 font-black mb-8 text-center italic leading-relaxed">どうしても必要な私物が<br>手元にあり、申請したい方</p>
+                    <div class="mt-auto w-full text-center">
+                        <p class="text-red-600 text-lg font-black mb-4 underline underline-offset-4 decoration-2 tracking-tighter">期限 4/24 (金) まで</p>
+                        <p class="bg-red-600 text-white text-center py-4 rounded-2xl font-black text-lg shadow-lg">各自で申請</p>
+                        <p class="text-[15px] text-red-700 mt-4 font-bold leading-relaxed italic">
+                            総務フォームから各自申請。<br>未申請だと5・6月使えません！
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Caution for Wagon & Locker -->
+            <div class="mt-12 bg-amber-50 border-4 border-amber-200 p-10 rounded-[3.5rem] flex items-start space-x-10 shadow-sm text-left">
+                <div class="bg-amber-100 p-6 rounded-3xl shrink-0 text-amber-600 shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+                </div>
+                <div>
+                    <h4 class="font-black text-amber-950 text-2xl mb-4 italic">什器返却時の絶対ルール</h4>
+                    <p class="text-xl text-amber-900 leading-relaxed font-bold underline decoration-amber-400 decoration-4 underline-offset-8 mb-4">
+                        袖机（ワゴン）は廃止です。必ず中身を空にし、暗証番号を「0000」にリセットしてください。
+                    </p>
+                    <p class="text-xl text-red-700 leading-relaxed font-black mb-4 italic">
+                        ※個人ロッカーが不要になった方も、必ず空にして「0000」にリセットをお願いします。
+                    </p>
+                    <p class="text-lg text-amber-600 font-black opacity-80 underline italic">中身の放置や、ロックしたままの返却は厳禁です。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Shared Assets -->
+        <section class="mb-20 text-left">
+            <h2 class="text-3xl font-black mb-10 flex items-center tracking-tight text-slate-900">
+                <span class="bg-slate-900 text-white w-14 h-14 rounded-2xl flex items-center justify-center mr-6 text-2xl shadow-lg">02</span>
+                共有備品・管理書類のステータス
+            </h2>
+
+            <div class="bg-white p-10 md:p-16 rounded-[4rem] shadow-xl relative overflow-hidden border border-slate-200">
+                <div class="flex flex-col md:flex-row gap-12">
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-black mb-8 text-slate-900 border-l-8 border-blue-600 pl-6 leading-relaxed">
+                            部署で使う共有アイテムについて
+                        </h3>
+                        
+                        <!-- Status Badge -->
+                        <div class="bg-blue-50 p-8 rounded-3xl mb-10 border-2 border-blue-100 flex items-center justify-center md:justify-start text-blue-800 font-black text-xl shadow-inner">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            事業管理グループにて、申請完了している
+                        </div>
+
+                        <p class="text-xl text-slate-700 leading-relaxed font-medium">
+                            業務で必須な共有アイテム（**ポータブルディスプレイ、Wi-Fi、郵便トレイ**等）は事業管理グループで5・6月分を確保済みです。<br><br>
+                            それ以外の<span class="text-red-600 font-black italic underline decoration-2">個人的な荷物</span>を5・6月に手元に置きたい場合は、各自での個別ロッカー申請（前述）が必要となります。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Timeline -->
+        <section class="mb-20 text-left">
+            <h2 class="text-3xl font-black mb-16 flex items-center tracking-tight text-slate-900">
+                <span class="bg-slate-900 text-white w-14 h-14 rounded-2xl flex items-center justify-center mr-6 text-2xl shadow-lg italic">T</span>
+                移転スケジュール
+            </h2>
+
+            <div class="relative pl-16 space-y-24 before:content-[''] before:absolute before:left-[31px] before:top-4 before:bottom-4 before:w-3 before:bg-gradient-to-b before:from-blue-600 before:via-slate-200 before:to-slate-900 rounded-full">
+                
+                <!-- Period 1 -->
+                <div class="relative group">
+                    <div class="absolute left-[-47px] top-1.5 w-10 h-10 rounded-full bg-blue-600 ring-[12px] ring-blue-100 shadow-xl transition-all group-hover:scale-110"></div>
+                    <div>
+                        <span class="text-blue-600 font-black text-3xl date-highlight block mb-3">NOW 〜 4/30 (木)</span>
+                        <h4 class="font-black text-4xl text-slate-900 tracking-tighter mb-4">断捨離・梱包・準備期間</h4>
+                        <p class="text-xl text-slate-600 font-black pl-4 border-l-4 border-slate-300">
+                            まずは「捨てる」ことから。パッキング（ブルーラベル）も同時並行。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Period 2 -->
+                <div class="relative group">
+                    <div class="absolute left-[-47px] top-1.5 w-10 h-10 rounded-full bg-red-600 ring-[12px] ring-red-100 shadow-xl"></div>
+                    <div>
+                        <div class="flex items-center space-x-4 mb-3 text-red-600">
+                            <span class="font-black text-4xl date-highlight block leading-none">5/1 (金) 18:30 〜</span>
+                            <span class="bg-red-600 text-white text-base px-3 py-1 rounded-lg font-black animate-pulse">⚠️ 厳守</span>
+                        </div>
+                        <h4 class="font-black text-4xl text-slate-900 tracking-tighter mb-4">引越し・荷物搬出日</h4>
+                        <p class="text-xl text-slate-800 leading-relaxed font-black pl-4 border-l-4 border-red-500 bg-red-50 py-4 rounded-r-2xl pr-6">
+                            この時間までに完全退館してください。搬出が開始されます。<br>
+                            ノートPCや電源アダプタ等は各自で持ち帰りとなります。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Period 3 -->
+                <div class="relative group">
+                    <div class="absolute left-[-47px] top-1.5 w-10 h-10 rounded-full bg-emerald-500 ring-[12px] ring-emerald-100 shadow-xl"></div>
+                    <div>
+                        <span class="text-emerald-700 font-black text-3xl date-highlight block mb-3">5/7 〜 6/28</span>
+                        <h4 class="font-black text-4xl text-slate-900 tracking-tighter mb-8">16階 暫定オフィス運用</h4>
+                        <div class="bg-emerald-50 p-10 md:p-12 rounded-[4rem] border-4 border-emerald-100 max-w-2xl shadow-inner relative">
+                            <p class="text-xl text-emerald-950 font-black leading-relaxed mb-8">
+                                Musubell集合エリアの場所は、5月上旬に共有される「<span class="text-emerald-700 underline decoration-4 decoration-emerald-300 italic text-2xl">後日送付レイアウト</span>」で必ず確認してください。
+                            </p>
+                            <div class="text-lg text-red-700 font-black flex items-start p-8 bg-white rounded-[3rem] shadow-md border-2 border-red-100 ring-4 ring-red-50">
+                                <span class="mr-6 text-5xl">⚠️</span>
+                                <div class="space-y-3">
+                                    <p class="text-xl">固定席は一旦リセットされます。</p>
+                                    <p class="opacity-80 leading-snug text-base">ただし、<span class="text-red-600 underline decoration-red-200">固定電話付近</span>にMusubellエリアを設置予定です。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Period 4 -->
+                <div class="relative group">
+                    <div class="absolute left-[-55px] top-0 w-16 h-16 rounded-[2rem] bg-slate-900 flex items-center justify-center text-white text-base font-black shadow-2xl rotate-3 ring-[12px] ring-slate-100 uppercase font-black">GOAL</div>
+                    <div class="pl-8">
+                        <span class="text-blue-600 font-black text-3xl date-highlight block mb-3">2026年 7月〜</span>
+                        <h4 class="font-black text-5xl text-slate-900 tracking-tighter text-blue-900 underline decoration-blue-200 decoration-8 underline-offset-4">17F 新オフィス 運用開始</h4>
+                        <p class="mt-10 text-xl text-slate-600 leading-relaxed font-black border-l-8 border-blue-600 pl-8">
+                            新しい部署キャビネットでの運用を開始します。<br>詳細は事業管理グループより別途指示いたします。
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Footer -->
-        <footer class="text-center bg-white p-16 rounded-[4rem] shadow-xl border border-slate-100">
-            <h3 class="text-3xl font-black text-slate-800 mb-10 tracking-tight">
-                <span class="inline-block border-b-[8px] border-blue-500 pb-2">お困りの際の連絡先</span>
-            </h3>
-            <div class="flex flex-col md:flex-row justify-center gap-8 mb-12">
-                <div class="bg-slate-50 border-2 border-slate-100 px-10 py-6 rounded-[2rem] shadow-sm flex flex-col items-center">
-                    <span class="text-4xl mb-3">📧</span>
-                    <p class="text-sm font-black text-slate-400 uppercase tracking-widest mb-1">Email</p>
-                    <p class="text-xl font-black text-blue-600">keiko-fujimoto@garage.co.jp</p>
-                </div>
-                <div class="bg-slate-50 border-2 border-slate-100 px-10 py-6 rounded-[2rem] shadow-sm flex flex-col items-center">
-                    <span class="text-4xl mb-3">💬</span>
-                    <p class="text-sm font-black text-slate-400 uppercase tracking-widest mb-1">Slack DM</p>
-                    <p class="text-xl font-black text-slate-800">担当者（藤本）へDMを送る</p>
-                </div>
-            </div>
-            <p class="text-slate-300 font-black text-sm uppercase tracking-[0.5em]">Digital Garage, Inc. IT Security Team</p>
+        <footer class="mt-40 pt-20 border-t-4 border-slate-200 text-center">
+            <p class="text-slate-400 text-sm tracking-[0.6em] font-black uppercase block italic font-bold">Digital Garage Group Optimization Project - v2.2</p>
         </footer>
+
     </div>
+
 </body>
 </html>
